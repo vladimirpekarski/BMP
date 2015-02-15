@@ -25,7 +25,7 @@ public class GettingHarTest {
 
         proxyServer.newHar("onliner");
 
-        driver.get("http://the-internet.herokuapp.com/abtest");
+        driver.get("http://www.onliner.by");
 
         Har har = proxyServer.getHar();
 

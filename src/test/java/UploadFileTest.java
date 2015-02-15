@@ -14,7 +14,7 @@ public class UploadFileTest {
                 .getLocation().getFile();
 
         WebDriver driver = new FirefoxDriver();
-        File file = new File(relPath + "../../src/test/resources/2.png");
+        File file = new File(relPath + "../../src/java/resources/2.png");
 
         driver.get("http://the-internet.herokuapp.com");
         driver.findElement(By.linkText("File Upload")).click();
