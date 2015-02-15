@@ -12,7 +12,7 @@ public class AutoItTest {
 
     @Test
     public void autoItTest() throws IOException, InterruptedException {
-        String filePath = "d:/books/JAVA/CoursesDZ/_Automation/AutoIT/winauth.exe";
+        String filePath = "d:/books/JAVA/CoursesDZ/_Automation/AutoIT/winauth.exe"; //ToDo correct URL, remove hard code
 
         Runtime rt = Runtime.getRuntime();
         WebDriver driver = new InternetExplorerDriver();
@@ -20,7 +20,7 @@ public class AutoItTest {
 
         driver.get("http://the-internet.herokuapp.com/");
 
-        rt.exec(filePath + " admin" + " admin");
+        rt.exec(filePath + " admin" + " admin"); //ToDo correct URL, remove hard code
         driver.findElement(By.linkText("Basic Auth")).click();
         Assert.assertTrue(driver.getPageSource().contains("Congratulations! You "));
     }
