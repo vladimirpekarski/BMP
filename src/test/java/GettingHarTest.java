@@ -40,6 +40,6 @@ public class GettingHarTest {
         }
 
         proxyServer.stop();
-        har.writeTo(new File("D:\\some.har"));
+        har.writeTo(new File("D:\\some.har")); //ToDo save in target folder
     }
 }
