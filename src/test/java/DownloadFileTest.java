@@ -26,7 +26,7 @@ public class DownloadFileTest {
         bmp.start();
 
         HttpResponseInterceptor downloader = new FileDownloader()
-                .addContentType("image/jpeg");
+                .addContentType("application/octet-stream");
         bmp.addResponseInterceptor(downloader);
 
         DesiredCapabilities caps = new DesiredCapabilities();
@@ -36,14 +36,14 @@ public class DownloadFileTest {
 
         driver.get("http://the-internet.herokuapp.com");
         driver.findElement(By.linkText("File Download")).click();
-        driver.findElement(By.linkText("avatar.jpg")).click();
+        driver.findElement(By.linkText("bf.png")).click();
 
         File downloadedFile = new File(driver.findElement(By.tagName("body"))
                 .getText());
         System.out.println(downloadedFile);
         System.out.println(FileUtils.generateMD5(downloadedFile));
         Assert.assertTrue(downloadedFile.exists());
-        Assert.assertEquals(FileUtils.generateMD5(downloadedFile), "d56900c1544ce6a413d1e0dee32e98fc");
+        Assert.assertEquals(FileUtils.generateMD5(downloadedFile), "2fd2cd43708f4a85eab25108e31a3971");
 
         Thread.sleep(8000);
 
